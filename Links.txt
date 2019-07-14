@@ -1,0 +1,10 @@
+Links for our projects
+1)Virtualy Reality
+http://virtualreality.albuket.az/
+login:admin
+password:123
+
+2)ItHelpDesk
+http://ithelpdesk.albuket.az/
+login:admin
+password:123
