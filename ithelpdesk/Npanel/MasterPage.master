@@ -1,0 +1,267 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from coderthemes.com/ubold_1.1/dark/page-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Nov 2015 02:12:28 GMT -->
+<head id="Head1" runat="server">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Ideal Administration">
+		<meta name="author" content="QWANT LLC">
+
+		<link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+		<title>Helpdesk Administration Panel</title>
+
+        <!--Morris Chart CSS -->
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+        
+        <asp:ContentPlaceHolder id="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+          
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work    if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+        <script src="js/moment.js"></script>
+
+	</head>
+
+	<body class="fixed-left">
+        <form id="form1" runat="server">
+        <div class="animationload">
+            <div class="loader-1"></div>
+        </div>
+
+		<!-- Begin page -->
+		<div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        
+                        <img src="assets/images/logo%20_qwant.png"  height="40" width="164" style="margin-top:10px"/>
+                    </div>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation" style="height: 62px;">
+                    <div class="container">
+                        <div class="">
+
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                             <li class="text-muted menu-title"> 
+                               <h6 id="time_info" style="color:Black;" runat="server" >Package Deadline: </h6>
+                                <h6 id="point_info" clientidmode="Static" style="color: Black;" runat="server" >Package Point: </h6>
+
+                             </li>
+                        <li>
+                          <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle profile waves-effect" data-toggle="dropdown" aria-expanded="true">
+                                     <asp:Label runat="server" ID="lang_lbl" Class="circle-text" Font-Underline="true">En <%--<%= HttpContext.Current.Session["LANG"].ToString() %>--%></asp:Label> 
+                                      </a>
+                                    <ul class="dropdown-menu">
+                                        <li <% =AZ_ACTIVE %>>
+                                            <asp:LinkButton runat="server" ID="AZ_btn" onclick="AZ_btn_Click" CausesValidation="false"><img src="assets/images/Azerbaijan-Flag.png" />  Azərbaycan</asp:LinkButton>
+										</li>
+										<li <% =RU_ACTIVE %>>
+											<asp:LinkButton runat="server" ID="RU_btn" onclick="RU_btn_Click" CausesValidation="false"><img src="assets/images/Russia.png" />  Pусский</asp:LinkButton>
+										</li>
+                                        	<li <% =EN_ACTIVE %>>
+                                               <asp:LinkButton runat="server" ID="EN_btn" onclick="EN_btn_Click" CausesValidation="false"><img src="assets/images/United-Kingdom.png" />  English</asp:LinkButton>
+										</li>
+                                    </ul>
+                                </li>
+                        </li>
+
+
+                      
+                       
+
+                              
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle profile waves-effect" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="ti-user m-r-5"></i>Change password</a></li>
+                                        <li><asp:LinkButton ID="SignOut_btn" runat="server" onclick="SignOut_btn_Click"> <i class="ti-power-off m-r-5"></i> Sign out</a></asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu" >
+                <div class="sidebar-inner slimscrollleft">
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+
+                       <li class="text-muted menu-title">   </li>
+                           <li class="text-muted menu-title"> 
+                              <asp:Label  ID="Loginlbl" ForeColor="White"  Font-Size="Small"  runat="server"  Visible="true" class="ion-android-social-user" ></asp:Label>
+                              <br />
+                               <h5 id="package_info" style="color: #fff;" runat="server" ></h5>
+                             
+
+                           </li>
+                          
+                         
+
+                             
+                    <br />
+                        <ul>
+
+                             <li id="category_li" runat="server" visible="false"  >
+                                <a id="A1" href="Npanel/Category.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-assignment" ></i><span>Category</span> </a>
+                            </li>
+                              <li  id="subcategory_li" runat="server" visible="false">
+                                <a id="A2" href="Npanel/Subcategories.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-my-library-books"></i> <span>Subcategory</span> </a>
+                            </li>
+                            <li id="users_li" runat="server" visible="false">
+                                <a id="A3" href="Npanel/Users.aspx" class="waves-effect waves-light" runat="server" ><i class="md-accessibility"></i><span>Users</span> </a>
+                            </li>
+                             <li  id="vendorusers_li" runat="server" visible="false">
+                                <a id="A7" href="Npanel/Vendorusers.aspx" class="waves-effect waves-light" runat="server" ><i class="  md-perm-identity"></i> <span>Vendor user</span> </a>
+                            </li>
+                             <li id="orderlist_li" runat="server" visible="false" >
+                                <a id="A4" href="Npanel/Orderlist.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-format-list-numbered"></i> <span>Order list</span> </a>
+                            </li>
+                               <li id="Problem_list" runat="server" visible="false" >
+                                <a id="A9" href="Npanel/Problemorders.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-format-list-numbered"></i> <span>Problem list</span> </a>
+                            </li>
+                             <li id="card_generator" runat="server" visible="false" >
+                                <a id="A11" href="Npanel/Cardgenerator.aspx" class="waves-effect waves-light" runat="server" ><i class="md-refresh"></i> <span>Card generator</span> </a>
+                            </li>
+                             <li id="Report_list" runat="server" visible="false" >
+                                <a id="A12" href="Npanel/Report.aspx" class="waves-effect waves-light" runat="server" ><i class="md-refresh"></i> <span>Card generator</span> </a>
+                            </li>
+                             <li id="Tranzactions_list" runat="server" visible="false" >
+                                <a id="A13" href="Npanel/Tranzactions.aspx" class="waves-effect waves-light" runat="server" ><i class="md-refresh"></i> <span>Card generator</span> </a>
+                            </li>
+                             <li id="Doneorders_li" runat="server" visible="false" >
+                                <a id="A10" href="Npanel/Doneorders.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-format-list-numbered"></i> <span>Done list</span> </a>
+                            </li>
+                               <li id="createorder_li" runat="server" visible="false">
+                                <a id="A5" href="Createorder.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-create"></i> <span>Create order</span> </a>
+                            </li>
+                            </li>
+                              <li id="myorders_li" runat="server" visible="false">
+                                <a id="A6" href="Myorders.aspx" class="waves-effect waves-light" runat="server" ><i class=" md-local-offer"></i> <span>My orders</span> </a>
+                            </li>
+                             <li id="pricing_li" runat="server" visible="false">
+                                <a id="A8" href="Pricing.aspx" class="waves-effect waves-light" runat="server" ><i class="ion-card"></i> <span>Buy package</span> </a>
+                            </li>
+                          
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start right Content here -->
+			<!-- ============================================================== -->
+			<div class="content-page">
+				<!-- Start content -->
+				<div class="content">
+					<div class="container">
+                         <asp:ContentPlaceHolder id="Body" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div> <!-- container -->      
+                </div> <!-- content -->
+                <footer class="footer">
+                    <table width="100%">
+                       <tr>
+                          <td  width="20%" align="left">2019 © Helpdesk site administration panel</td>
+                       </tr>
+                    </table>
+                </footer>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- Right Sidebar -->
+     
+            <!-- /Right-bar -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+     
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <script src="assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/plugins/switchery/dist/switchery.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
+        <script src="assets/plugins/select2/select2.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-filestyle/src/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+	
+        <asp:ContentPlaceHolder id="footer" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- Notify -->
+        <!---------------------------------------------------------------------------- -->
+        <script src="assets/plugins/notifyjs/dist/notify.min.js"></script>
+        <script src="assets/plugins/notifications/notify-metro.js"></script>
+        <!---------------------------------------------------------------------------- -->
+
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+      
+
+        </form>
+	</body>
+
+</html>

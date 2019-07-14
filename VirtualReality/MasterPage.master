@@ -1,0 +1,200 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1" runat="server">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="IPhone Service Controlling System">
+		<meta name="author" content="QWANT LLC">
+		<link rel="shortcut icon" href="assets/images/vricon.png" style="background:transparent">
+		<title>Phobia VR</title>
+
+        <!--Morris Chart CSS -->
+
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+       
+        <asp:ContentPlaceHolder id="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work    if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+
+	</head>
+
+	<body class="fixed-left">
+        <form id="form1" runat="server">
+     
+
+		<!-- Begin page -->
+		<div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar" >
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="defaultinner.aspx" class="logo">
+                            <img src="assets/images/logo.jpg"/>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="">
+
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle profile waves-effect" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <ul class="dropdown-menu">
+                                        <li><asp:LinkButton ID="SignOut_btn" runat="server" onclick="SignOut_btn_Click"> <i class="ti-power-off m-r-5"></i> Выход</a></asp:LinkButton></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+            <br />
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu" >
+                <div class="sidebar-inner slimscrollleft">
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a href="#" class="waves-effect waves-light"><i class="ti-user"></i> <span>Вы, <% =AuthCookieParse.UserFIO() %></span> </a>
+                            </li>
+                    <asp:Literal ID="MenuDictionaries_lb" runat="server" Visible="true">
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect waves-light myactive"><i class="ti-view-list-alt"></i> <span> Словари</span> </a>
+                                <ul class="list-unstyled">
+                                  <li><a href="DevicesCategory.aspx">Категории аппаратов</a></li>
+                                  <li><a href="GamesCategory.aspx">Категории игр</a></li>
+                                  <li><a href="BusinessPartners.aspx">Бизнес партнёры</a></li>
+                                  <li><a href="CustomerSources.aspx">Источники клиентов</a></li>
+                                  <li><a href="Price_Packages.aspx">Пакеты</a></li>
+                                  <li><a href="RejectReasons.aspx">Причины отказов</a></li>
+                                  <li><a href="Devices.aspx">Аппараты</a></li>
+                                  <li><a href="Games.aspx">Игры</a></li>
+                                </ul>
+                            </li>
+                </asp:Literal>
+               <!--  <asp:Literal ID="getcard_lb" runat="server" Visible="true">
+                            <li>
+                                <a href="Card.aspx" class="waves-effect waves-light"><i class="ti-credit-card"></i> <span>Kart Almaq</span> </a>
+                            </li>
+                </asp:Literal> -->
+                 <asp:Literal ID="client_add" runat="server" Visible="true">
+                            <li>
+                                <a href="Client_add.aspx" class="waves-effect waves-light"><i class="ti-user"></i> <span>Клиенты</span> </a>
+                            </li>
+                </asp:Literal>
+                     <asp:Literal ID="client_order" runat="server" Visible="false">
+                            <li>
+                                <a href="ClientOrder.aspx" class="waves-effect waves-light"><i class="ti-pencil-alt"></i> <span>Заказ</span> </a>
+                            </li>
+                </asp:Literal>
+                  <asp:Literal ID="payment_lb" runat="server" Visible="true">
+                            <li>
+                                <a href="Payment.aspx" class="waves-effect waves-light"><i class="ti-money"></i> <span>Заказы</span> </a>
+                            </li>
+                </asp:Literal>
+                        <asp:Literal ID="report_lb" runat="server" Visible="true">
+                            <li>
+                                <a href="Report.aspx" class="waves-effect waves-light"><i class="ti-book"></i> <span>Отчёт</span> </a>
+                            </li>
+                </asp:Literal>
+
+                <asp:Literal ID="users_lb" runat="server" Visible="true">
+                            <li>
+                                <a href="Users.aspx" class="waves-effect waves-light"><i class="ti-user"></i> <span>Пользователи</span> </a>
+                            </li>
+                </asp:Literal>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+			<!-- ============================================================== -->
+			<!-- Start right Content here -->
+			<!-- ============================================================== -->
+			<div class="content-page">
+				<!-- Start content -->
+				<div class="content">
+					<div class="container">
+                         <asp:ContentPlaceHolder id="Body" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div> <!-- container -->      
+                </div> <!-- content -->
+                  
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+           
+
+        </div>
+        <!-- END wrapper -->
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+	
+        <asp:ContentPlaceHolder id="footer" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- Notify -->
+        <!---------------------------------------------------------------------------- -->
+        <script src="assets/plugins/notifyjs/dist/notify.min.js"></script>
+        <script src="assets/plugins/notifications/notify-metro.js"></script>
+        <!---------------------------------------------------------------------------- -->
+
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+        </form>
+	</body>
+
+</html>

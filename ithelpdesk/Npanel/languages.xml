@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <RU>
+
+    <Category_category_edt>Niznayu</Category_category_edt>
+    <Category_category_edt_label>Mosu</Category_category_edt_label>
+    
+</RU>
+  <AZ>
+    <Category_category_edt>Kateqoriya daxil edin</Category_category_edt>
+    <Category_category_edt_label>KAteqoriya</Category_category_edt_label>
+</AZ>
+
+  <EN>
+    <Category_category_edt>Category add</Category_category_edt>
+    <Category_category_edt_label>Category</Category_category_edt_label>
+  </EN>
+</root>

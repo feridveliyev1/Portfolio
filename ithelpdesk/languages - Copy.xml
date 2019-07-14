@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <RU>
+
+    <Category_category_edt>Niznayu</Category_category_edt>
+    <Category_category_edt_label>Mosu</Category_category_edt_label>
+
+    <createorder_create_order></createorder_create_order>
+
+    <price>Chena</price>
+    
+    
+</RU>
+  <AZ>
+    <Category_category_edt>Kateqoriya daxil edin</Category_category_edt>
+    <Category_category_edt_label>Kateqoriya</Category_category_edt_label>
+
+    <createorder_create_order>Sifariş yarat</createorder_create_order>
+    <createorder_order>Sifariş</createorder_order>
+    <createorder_name>Ad</createorder_name>
+    <default_forgot_password>Şifrəni unutmusuz?</default_forgot_password>
+
+    <creaeorder_price>Qiymət</creaeorder_price>
+    <createorder_check>Seçin</createorder_check>
+    <createorder_selected_services>Seçilmiş xidmətlər</createorder_selected_services>
+    <createorder_subject>Başlıq</createorder_subject>
+    <createorder_description>Ətraflı</createorder_description>
+    <createorder_time_to_connect>Qoşulma vaxtı</createorder_time_to_connect>
+    <createorder_payment_type>Ödəniş növü:</createorder_payment_type>
+
+    <createorder_pay>Ödə</createorder_pay>
+    <createorder_total>Cəm:</createorder_total>
+    <createorder_subject_placeholder>Başlıq</createorder_subject_placeholder>
+    <createorder_connect_placeholder>Qoşulma vaxtı</createorder_connect_placeholder>
+    <createorder_time_placeholder>SS:DD</createorder_time_placeholder>
+    <createorder_online_card>Kredit kartı </createorder_online_card>
+    <createorder_cash>Nəğd</createorder_cash>
+    <default_login_placeholder>İstifadəçi adı</default_login_placeholder>
+    <default_password_placeholder>Şifrə</default_password_placeholder>
+    <default_have_account>Hesabınız yoxdur?</default_have_account>
+    <default_sign_up>Qeydiyyatdan keçin</default_sign_up>
+
+    
+</AZ>
+
+  <EN>
+    <Category_category_edt>Category add</Category_category_edt>
+    <Category_category_edt_label>Category</Category_category_edt_label>
+
+    <createorder_create_order>Ceeate order</createorder_create_order>
+    <createorder_order>Order</createorder_order>
+    <createorder_name>Name</createorder_name>
+
+    <creaeorder_price>Price</creaeorder_price>
+    <createorder_check>Check</createorder_check>
+    <createorder_selected_services>Selected services</createorder_selected_services>
+    <createorder_subject>Subject</createorder_subject>
+    <createorder_description>Description</createorder_description>
+    <createorder_time_to_connect>Time to connect</createorder_time_to_connect>
+    <createorder_payment_type>Payment type:</createorder_payment_type>
+    <default_login_placeholder>Login</default_login_placeholder>
+    <default_password_placeholder>Password</default_password_placeholder>
+    
+    <createorder_pay>Pay</createorder_pay>
+    <createorder_total>Total:</createorder_total>
+    <createorder_subject_placeholder>Subject</createorder_subject_placeholder>
+    <createorder_connect_placeholder>Time  to connect</createorder_connect_placeholder>
+    <createorder_time_placeholder>HH:mm</createorder_time_placeholder>
+    <createorder_online_card>Card </createorder_online_card>
+    <createorder_cash>Cash</createorder_cash>
+    <default_forgot_password>Forgot your password?</default_forgot_password>
+    <default_have_account>Don't have an account?</default_have_account>
+    <default_sign_up>Sign Up</default_sign_up>
+    
+ 
+  </EN>
+</root>
